@@ -16,17 +16,25 @@ export default {
     return{
       user:{
         
-      }
+      },
+      response:''
+      
     }
   },
   methods:{
     login(){
       axios.post('https://ideiativadaservice.azurewebsites.net/Auth' ,this.user)
-      .then( Responses=>console.log(Responses))
-      
-      // localStorage.setItem('token', Responses.data.access_token)
-      this.$router.push({name:'Client'})
-      .catch(erro=>console.log(erro));
+      .then((res)=>{
+        this.response = res
+        // console.log(this.response)
+        if (this.response.status == 200) {
+           localStorage.setItem('token', this.response.data.token)
+            this.$router.push({ name: 'Client' })
+        }
+      })
+      .catch(function(error){
+        console.log(error)
+      });
     }
   }
 }
