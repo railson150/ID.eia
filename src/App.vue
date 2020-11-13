@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <Sidebar />
     <Login />
   </div>
 </template>
 
 <script>
 import Login from './views/Login.vue'
+import Sidebar from './components/Sidebar.vue'
 
 export default {
   name: 'App',
   components: {
-    Login
+    Login,
+    Sidebar
   }
 }
 </script>
