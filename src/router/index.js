@@ -1,33 +1,46 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Gerentes from '../views/Gerentes.vue'
-// import UserCreate from '../views/UserCreate.vue'
-// import Home from '../views/Home.vue'
-import Client from '../views/Client.vue'
 import Login from '../views/Login.vue'
+import Client from '../views/Client.vue'
+import Dashboard from '../views/Dashboard.vue'
+import Project from '../views/Project.vue'
+import Settings from '../views/Settings.vue'
+
 
 Vue.use(VueRouter)
 
 const routes = [
-    {
-      path: '/',
-      name: 'Login',
-      component: Login
-    },
-
-    {
-      path: '/Client',
-      name: 'Client',
-      component: Client
-    },
-    // {
-    //   path: '/login',
-    //   name: 'login',
-    //   component: Login
-    // }
+  {
+    path: '/',
+    name: 'Login',
+    component: Login,
+  },
+  {
+    path: '/home',
+    name: 'Dashboard',
+    component: Dashboard,
+    children: [
+      {
+        path: '/clientes',
+        name: 'Clientes',
+        component: Client
+      },
+      {
+        path: '/projetos',
+        name: 'Projetos',
+        component: Project
+      },
+      {
+        path: '/configuracao',
+        name: 'Configuracao',
+        component: Settings
+      },
+    ]
+  },
 ]
 
 const router = new VueRouter({
+    mode: 'history',
     routes
   })
   

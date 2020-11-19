@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <h1>cliente logado</h1>
+  <div class="clientes">
+      <h1>Clientes</h1>
   </div>
 </template>
 
@@ -10,6 +10,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  .clientes {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
