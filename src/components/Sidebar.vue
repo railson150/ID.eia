@@ -8,7 +8,7 @@
       <router-link to="/clientes" class="rota" active-class="active">
         <div class="link-container">
           <img src="../assets/icon_clientes.svg">
-          <span>Clientes</span>
+          <span style="color: #f2bc12">Clientes</span>
         </div>
       </router-link>
       <router-link to="/projetos" class="rota" active-class="active">
@@ -89,26 +89,26 @@ export default {
   .link-container {
     display: flex;
     align-items: center;
-    padding-left: 25px;
+    padding-left: 15px;
   }
   .menu-items span {
-    margin-left: 18px;
+    margin-left: 15px;
     font: normal normal 600 15px/20px Open Sans;
     color: #9F9F9F;
   }
   .user {
     display: flex;
-    justify-content: center;
     align-items: center;
     font: normal normal bold 15px/20px Open Sans;
     color: #2E2E2E;
     text-transform: uppercase;
-    padding: 30px 0;
+    padding: 23px 0 23px 15px;
     margin-bottom: 53px;
     border-bottom: #f6f6f8 solid 1px;
+    box-sizing: border-box;
   }
   .user span {
-    margin-left: 18px;
+    margin-left: 15px;
   } 
   .menu-items {
     display: flex;

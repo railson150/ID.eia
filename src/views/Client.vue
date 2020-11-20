@@ -1,11 +1,19 @@
 <template>
   <div class="clientes">
-      <h1>Clientes</h1>
+      <Header />
+      <Buscar />
   </div>
 </template>
 
 <script>
+import Header from '../components/Header'
+import Buscar from '../components/Buscar'
+
 export default {
+  components: {
+    Header,
+    Buscar
+  }
 
 }
 </script>
@@ -14,8 +22,5 @@ export default {
   .clientes {
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 </style>

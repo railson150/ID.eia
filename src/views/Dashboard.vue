@@ -27,5 +27,6 @@ export default {
 .content {
   background: #F6F6F8;
   width: calc(100vw - 65px);
+  height: 100vh;
 }
 </style>
