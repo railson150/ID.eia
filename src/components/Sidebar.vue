@@ -7,7 +7,7 @@
     <div class="menu-items">
       <router-link to="/clientes" class="rota" active-class="active">
         <div class="link-container">
-          <img src="../assets/icone.svg">
+          <img src="../assets/icon_clientes.svg">
           <span>Clientes</span>
         </div>
       </router-link>
@@ -19,13 +19,13 @@
       </router-link>
       <router-link to="/configuracao" class="rota" active-class="active">
         <div class="link-container">
-          <img src="../assets/icone.svg">
+          <img src="../assets/icon_games.svg">
           <span>Configuração Games</span>
         </div>
       </router-link>
       <router-link to="/" class="rota" active-class="active">
         <div class="link-container">
-          <img src="../assets/icone.svg">
+          <img src="../assets/icon_sair.svg">
           <span>Sair</span>
         </div>
       </router-link>
