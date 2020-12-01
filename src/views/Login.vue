@@ -30,8 +30,13 @@ export default {
         this.response = res
         console.log(this.response.data.Token.Value)
         if (this.response.status == 200) {
+<<<<<<< HEAD
            localStorage.setItem('token', this.response.data.Token.Value)
             this.$router.push({ name: 'Dashboard' })
+=======
+           localStorage.setItem('token', this.response.data.token)
+            this.$router.push({ name: 'Client' })
+>>>>>>> 4e5bc9856e44ccd380c5e8261a75c662c41270ec
         }
       })
       .catch(function(error){
