@@ -1,7 +1,7 @@
 <template>
   <div class="buscar">
     <input type="text" placeholder="Busca">
-    <button>+ Novo Cliente</button>
+    <router-link class="button" to="/clientes/new">+ Novo Cliente</router-link>
   </div>
 </template>
 
@@ -29,11 +29,15 @@ export default {
   border: none;
   padding: 5px;
 }
-.buscar button {
+.buscar .button {
+  display: flex;
   width: 222px;
   height: 45px;
   color: #fff;
   text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
   font: normal normal 600 15px/20px Open Sans;
   background: #FBBD0E 0% 0% no-repeat padding-box;
   border-radius: 10px;

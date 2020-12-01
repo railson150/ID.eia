@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar" :class="{'show': showSidebar}">
     <div class="user">
-      <img src="../assets/icone.svg">
+      <img src="../assets/icon_perfil.svg">
       <span :class="{'show-names': showSidebar}">Usuário</span>
     </div>
     <div class="menu-items">

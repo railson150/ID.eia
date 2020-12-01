@@ -31,7 +31,7 @@ export default {
         // console.log(this.response)
         if (this.response.status == 200) {
            localStorage.setItem('token', this.response.data.token)
-            this.$router.push({ name: 'Dashboard' })
+            this.$router.push({ name: 'Client' })
         }
       })
       .catch(function(error){
