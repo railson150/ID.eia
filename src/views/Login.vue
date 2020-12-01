@@ -3,8 +3,8 @@
     <div class="content">
       <img class="logo" src="../assets/logo.svg" alt="">
       <form @submit.prevent="login">
-        <input type="text" name="login" id="login" placeholder="Login" v-model="user.login">
-        <input type="password" name="senha" id="senha" placeholder="Senha" v-model="user.pass">
+        <input type="text" name="login" id="login" placeholder="Login" v-model="user.Login">
+        <input type="password" name="senha" id="senha" placeholder="Senha" v-model="user.Password">
         <button id="entrar">Entrar</button>
       </form>
     </div>
@@ -25,7 +25,7 @@ export default {
   },
   methods:{
     login(){
-      axios.post('https://ideiativadaservice.azurewebsites.net/Auth' ,this.user)
+      axios.post('https://ideiativadaservice.azurewebsites.net/api/account/login' ,this.user)
       .then((res)=>{
         this.response = res
         // console.log(this.response)
