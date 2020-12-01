@@ -28,9 +28,9 @@ export default {
       axios.post('https://ideiativadaservice.azurewebsites.net/api/account/login' ,this.user)
       .then((res)=>{
         this.response = res
-        // console.log(this.response)
+        console.log(this.response.data.Token.Value)
         if (this.response.status == 200) {
-           localStorage.setItem('token', this.response.data.token)
+           localStorage.setItem('token', this.response.data.Token.Value)
             this.$router.push({ name: 'Dashboard' })
         }
       })
@@ -104,3 +104,4 @@ export default {
     margin-bottom: 58px;
   }
 </style>
+
