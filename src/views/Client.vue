@@ -97,7 +97,6 @@ export default {
   }
   table {
     margin: 30px;
-    width: 100%;
     text-align: center;
   }
 </style>
