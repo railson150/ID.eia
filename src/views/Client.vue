@@ -1,3 +1,4 @@
+
 <template>
   <div class="clientes">
       <Header />
@@ -30,30 +31,26 @@
                 <th>Criação</th>
                 <th>Ramo</th>
                 <th>Região</th>
-                <th>Número Func.</th>                
+                <th>Numero Func.</th>
                 <th>Ativo</th>
+
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Carai</td>
-                <td>10/10/2020</td>
-                <td>Drogas</td>
-                <td>Nordestão</td>
-                <td>1334</td>
-                <td>Sim</td>
-              </tr>
-              <tr>
-                <td>Desgraça</td>
-                <td>25/12/2020</td>
-                <td>Drogas</td>
-                <td>Nordestão</td>
-                <td>213</td>
-                <td>Não</td>
+              <tr v-for="(client, index) in clients" :key="index">
+                <td>{{client.CompanyName}}</td>
+                <td mask="dd/mm/yyyy">{{client.CreatedAt}}</td>
+                <td>{{client.Industry.Name}}</td>
+                <td>{{client.State}}</td>
+                <td>{{client.EmployeesNumber}}</td>
+                <td>{{client.Status}}</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <button @click="clientsGet">
+          btn
+        </button>
       </div>
   </div>
 </template>
@@ -62,14 +59,21 @@
 import Header from '../components/Header'
 import Buscar from '../components/Buscar'
 
+import {mask} from 'vue-the-mask'
 import axios from 'axios';
 export default {
   components: {
     Header,
     Buscar
   },
+  data() {
+    return {
+      clients:[]
+    }
+  },
+  directives: {mask},
   methods: {
-    clients(){
+    clientsGet(){
       const token = localStorage.getItem('token');
       axios.get('https://ideiativadaservice.azurewebsites.net/api/client/',{
         headers:{
@@ -77,7 +81,9 @@ export default {
         }
       })
       .then((res)=>{
-        console.log(res);
+        this.clients = res.data.Data;
+        console.log(this.clients);
+        
       })
       .catch((error)=>{
         console.log(error )
@@ -85,8 +91,9 @@ export default {
     }
   },
   beforeMount() {
-    this.clients();
+    this.clientsGet();
   },
+  
 
 }
 </script>
